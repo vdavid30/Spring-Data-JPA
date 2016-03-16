@@ -45,7 +45,7 @@ Realice lo siguiente, teniendo en cuenta la conveción de paquetes del diagrama 
 public interface PatientsRepository extends JpaRepository<Paciente, PacienteId>
 ```
 
-3. Agregue las anotaciones a la clase que tiene la anotación @SpringBootApplication: @EnableJpaRepositories y @EntityScan. En la primera, debe agregar como valor el paquete en el cual agregó la clase 'repositorio' creada anteriormente. En la segunda, agregue como valor el paquete donde están las clases de tipo entidad (@Entity). Por ejemplo:
+3. Agregue las anotaciones a la clase que tiene la anotación @SpringBootApplication: @EnableJpaRepositories y @EntityScan. En la primera, debe agregar como valor el paquete en el cual agregó la interfaz 'repositorio' creada anteriormente. En la segunda, agregue como valor el paquete donde están las clases de tipo entidad (@Entity). Por ejemplo:
 
 	```java
 @EnableJpaRepositories("edu.eci.cosw.paquete1.paquete2.paquete3")
