@@ -41,7 +41,7 @@ Realice lo siguiente, teniendo en cuenta la conveción de paquetes del diagrama 
 2. Cree la interfaz 'PatientsRepository', la cual hereda de la interfaz CrudRepository, y que asocie a los tipos genéricos Paciente y PacienteID (el tipo del repositorio y el tipo de su llave primaria respectivamente).
 
 	```java
-public interface PacienteRepository extends JpaRepository<Paciente, PacienteId>
+public interface PatientsRepository extends JpaRepository<Paciente, PacienteId>
 ```
 
 3. Agregue las anotaciones a la clase que tiene la anotación @SpringBootApplication: @EnableJpaRepositories y @EntityScan. En la primera, debe agregar como valor el paquete en el cual agregó la clase 'repositorio' creada anteriormente. En la segunda, agregue como valor el paquete donde están las clases de tipo entidad (@Entity). Por ejemplo:
