@@ -122,3 +122,36 @@ public interface PatientsRepository extends JpaRepository<Paciente, PacienteId>
 	mvn test
 ```
 
+
+11. Finalmente, configure su aplicación para que pueda generar documentación de sí misma, incluyendo -entre otros-: cubrimiento de pruebas y análisis estático de código. Para hacer esto, agregue el siguiente elemento en el pom.xml, como elemento hijo de <project>:
+
+	```
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+			</plugin>
+                        
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+			</plugin>		
+		</plugins>
+	</reporting>
+	```
+
+12. Para generar la documentación, ejecute:
+
+	```
+	mvn test
+```
+	Y consulte la página generada en el directorio  __target/site__
