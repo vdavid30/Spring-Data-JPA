@@ -17,29 +17,30 @@
 package edu.eci.cosw.samples.services;
 
 import edu.eci.cosw.jpa.sample.model.Paciente;
-import edu.eci.cosw.jpa.sample.model.PacienteId;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
 /**
  *
  * @author hcadavid
  */
-@Service
-public class PatientServicesStub implements PatientServices{
-
-    @Override
-    public Paciente getPatient(int id, String tipoid) {
-        return new Paciente(new PacienteId(1, "cc"),"Juan Perez",new Date());
-    }
-
-    @Override
-    public List<Paciente> topPatients(int n) {
-        List<Paciente> lp=new LinkedList<>();
-        lp.add(new Paciente(new PacienteId(1, "cc"),"Juan Perez",new Date()));
-        return lp;
-    }
+public interface PatientServices {
+    
+    /**
+     * Obj: consultar un paciente dado su ID y tipo ID
+     * @param id
+     * @param tipoid
+     * @return la instancia del paciente
+     * @throws ServicesException si hay un error interno o si 
+     * no existe un paciente con dicho identificador.
+     */
+    public Paciente getPatient(int id, String tipoid) throws ServicesException;
+    
+    /**
+     * Obj: retorna los pacientes que tengan más registradas más de N consultas.
+     * @param n - el valor N a ser usado como parámetro en la consulta
+     * @return el listao de pacientes que tengan más registradas más de N consultas.
+     * @throws ServicesException si se presenta un error interno en la consulta.
+     */
+    public List<Paciente> topPatients(int n) throws ServicesException;
     
 }
