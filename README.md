@@ -152,6 +152,6 @@ public interface PatientsRepository extends JpaRepository<Paciente, PacienteId>
 12. Para generar la documentación, ejecute:
 
 	```
-	mvn test
+	mvn site
 ```
 	Y consulte la página generada en el directorio  __target/site__
