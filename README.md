@@ -53,7 +53,7 @@ public interface PacienteRepository extends JpaRepository<Paciente, PacienteId>
 
 
 
-4. En la ruta src/main/resources cree dos archivos de configuración. El primero, tendrá los parámetros para conectarse a una base de datos real, y el segundo, para conectarse a una base de datos H2 en memoria:
+4. En la ruta __src/main/resources__ cree dos archivos de configuración. El primero, tendrá los parámetros para conectarse a una base de datos real, y el segundo, para conectarse a una base de datos H2 en memoria:
 
 
 	**application.properties**
