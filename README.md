@@ -97,7 +97,7 @@ public interface PatientsRepository extends JpaRepository<Paciente, PacienteId>
 	* Para el primer método, revise qué operaciones ofrecen por defecto los [JpaRepository](http://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html).
 	* Para el segundo, revise en la sección 2.3.4 de la documentación de [Spring DATA](http://docs.spring.io/spring-data/jpa/docs/1.4.3.RELEASE/reference/html/jpa.repositories.html) cómo definir consultas personalizadas dentro de un repositorio. Con lo anterior, agregue una consulta que permita obtener los pacientes que tengan al menos N consultas, y úsela desde el método que está implementando.
 
-6. Haga que PatientsController se inyecte la clase anteriorme creada en lugar de la inyectada actualmente (PatientServicesStub).
+6. Haga que el bean PatientsController se inyecte la clase anteriorme creada (en lugar de la inyectada actualmente, PatientServicesStub).
 
 7. Agregue al API REST un recurso que corresponda a los pacientes que hayan tenido al menos 10 consultas. Implemente el método de controlador correspondiente haciendo uso de los Servicios de Paciente.
 
