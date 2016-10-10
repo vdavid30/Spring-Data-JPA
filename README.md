@@ -66,8 +66,11 @@ public interface PatientsRepository extends JpaRepository<Paciente, PacienteId>
 	spring.datasource.password = bdprueba
 		
 	#Hibernate target database parameters
-	spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect
+	spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.H2Dialect
+	#Avoid JPA's automatic lowercasing of tables and columns names
 	spring.jpa.hibernate.naming_strategy=org.hibernate.cfg.EJB3NamingStrategy
+	spring.jpa.hibernate.naming.implicit-strategy=org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+	spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 		
 	#Logging configuration
 	spring.jpa.show-sql = true
